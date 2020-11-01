@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.github.yanbrandao</groupId>
         <artifactId>tapajos-starters</artifactId>
-        <version>0.0.1b</version>
+        <version>0.0.1a</version>
     </parent>
     <artifactId>tapajos-starter-commons</artifactId>
     <packaging>jar</packaging>
@@ -68,7 +68,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <jvmTarget>1.8</jvmTarget>
+                    <jvmTarget>11</jvmTarget>
                 </configuration>
             </plugin>
         </plugins>

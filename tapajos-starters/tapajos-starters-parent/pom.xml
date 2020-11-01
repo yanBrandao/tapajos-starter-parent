@@ -6,7 +6,7 @@
         <parent>
             <groupId>io.github.yanbrandao</groupId>
             <artifactId>tapajos-starters</artifactId>
-            <version>0.0.1b</version>
+            <version>0.0.1a</version>
         </parent>
         <artifactId>tapajos-starters-parent</artifactId>
         <packaging>pom</packaging>

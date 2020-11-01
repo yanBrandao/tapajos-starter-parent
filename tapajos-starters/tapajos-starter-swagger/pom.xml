@@ -6,10 +6,9 @@
     <parent>
         <groupId>io.github.yanbrandao</groupId>
         <artifactId>tapajos-starters</artifactId>
-        <version>0.0.1b</version>
+        <version>0.0.1a</version>
     </parent>
     <artifactId>tapajos-starter-swagger</artifactId>
-    <packaging>jar</packaging>
     <name>tapajos-starter-swagger</name>
     <description>Module with swagger documentation</description>
 
@@ -31,6 +30,7 @@
         <dependency>
             <groupId>io.github.yanbrandao</groupId>
             <artifactId>tapajos-starter-commons</artifactId>
+            <version>0.0.1a</version>
         </dependency>
     </dependencies>
 </project>

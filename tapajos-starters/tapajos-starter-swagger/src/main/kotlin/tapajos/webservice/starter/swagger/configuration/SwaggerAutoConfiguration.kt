@@ -3,6 +3,7 @@ package tapajos.webservice.starter.swagger.configuration
 import com.google.common.base.Predicates
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.PropertySource
 import springfox.documentation.builders.ApiInfoBuilder
 import springfox.documentation.builders.RequestHandlerSelectors
@@ -12,8 +13,9 @@ import springfox.documentation.spring.web.plugins.Docket
 import springfox.documentation.swagger2.annotations.EnableSwagger2
 import tapajos.webservice.starter.commons.annotation.SwaggerIgnore
 
+@Configuration
 @EnableSwagger2
-@PropertySource("classpath:application.yml")
+@PropertySource("classpath:application.properties")
 class SwaggerAutoConfiguration {
 
     @Value("\${swagger.api.info.title}")
