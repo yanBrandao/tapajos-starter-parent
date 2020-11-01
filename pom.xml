@@ -11,13 +11,13 @@
     <groupId>io.github.yanbrandao</groupId>
     <artifactId>tapajos-starter-parent</artifactId>
     <packaging>pom</packaging>
-    <version>${release.version}</version>
+    <version>0.0.1a</version>
     <name>tapajos-starter-parent</name>
-    <description>Starter parent for Java projects</description>
+    <description>Starter parent for Kotlin projects</description>
     <url>https://github.com/yanBrandao/tapajos-starter-parent</url>
 
     <properties>
-        <release.version>1.0.0a</release.version>
+        <release.version>0.0.1b</release.version>
         <java.version>11</java.version>
         <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
         <aws-java-jdk.version>1.11.848</aws-java-jdk.version>
@@ -27,8 +27,8 @@
         <swagger.version>2.9.2</swagger.version>
         <micrometer.version>1.5.4</micrometer.version>
         <!-- Logback -->
-        <logback.jackson.version>0.1.5</logback.jackson.version>
-        <logback.classic.version>1.2.3</logback.classic.version>
+        <logback-jackson.version>0.1.5</logback-jackson.version>
+        <logback-classic.version>0.1.5</logback-classic.version>
         <logstash-logback-encoder.version>6.4</logstash-logback-encoder.version>
         <!-- Database -->
         <postgres.version>42.2.16</postgres.version>
@@ -36,6 +36,7 @@
         <!-- Test -->
         <jacoco-plugin.version>0.8.5</jacoco-plugin.version>
         <mockito-kotlin.version>1.6.0</mockito-kotlin.version>
+        <kotlin.version>1.4.10</kotlin.version>
     </properties>
 
     <modules>
@@ -49,15 +50,15 @@
 
 
     <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
+        <repository>
+            <id>nexus</id>
+            <url>http://localhost:8081/repository/maven-public/</url>
+        </repository>
     </distributionManagement>
 
     <dependencyManagement>
         <dependencies>
-            <!-- Spring Clound Dependencies -->
+            <!-- Spring Cloud Dependencies -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -151,6 +152,20 @@
         </dependencies>
     </dependencyManagement>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jdk8</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-test</artifactId>
+            <version>${kotlin.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
     <build>
         <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
         <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
@@ -199,6 +214,17 @@
         </pluginManagement>
         <plugins>
             <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.7</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>nexus</serverId>
+                    <nexusUrl>http://localhost:8081/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
             </plugin>
@@ -213,37 +239,6 @@
                 <configuration>
                     <tag>${project.version}</tag>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>flatten-maven-plugin</artifactId>
-                <inherited>true</inherited>
-                <executions>
-                    <execution>
-                        <id>flatten</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>flatten</goal>
-                        </goals>
-                        <configuration>
-                            <updatePomFile>true</updatePomFile>
-                            <flattenMode>resolveCiFriendliesOnly</flattenMode>
-                            <pomElements>
-                                <parent>expand</parent>
-                                <distributionManagement>remove</distributionManagement>
-                                <repositories>remove</repositories>
-                                <build>remove</build>
-                            </pomElements>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>flatten-clean</id>
-                        <phase>clean</phase>
-                        <goals>
-                            <goal>clean</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>

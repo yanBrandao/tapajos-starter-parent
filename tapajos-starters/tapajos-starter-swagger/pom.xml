@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.github.yanbrandao</groupId>
+        <artifactId>tapajos-starters</artifactId>
+        <version>0.0.1b</version>
+    </parent>
+    <artifactId>tapajos-starter-swagger</artifactId>
+    <packaging>jar</packaging>
+    <name>tapajos-starter-swagger</name>
+    <description>Module with swagger documentation</description>
+
+    <properties>
+        <main.basedir>${basedir}/../../</main.basedir>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.yanbrandao</groupId>
+            <artifactId>tapajos-starter-commons</artifactId>
+        </dependency>
+    </dependencies>
+</project>

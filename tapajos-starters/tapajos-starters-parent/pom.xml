@@ -1,0 +1,79 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+        <parent>
+            <groupId>io.github.yanbrandao</groupId>
+            <artifactId>tapajos-starters</artifactId>
+            <version>0.0.1b</version>
+        </parent>
+        <artifactId>tapajos-starters-parent</artifactId>
+        <packaging>pom</packaging>
+        <name>tapajos-starters-parent</name>
+        <description>Module starter parent</description>
+
+        <properties>
+            <main.basedir>${basedir}/../../</main.basedir>
+        </properties>
+    <!--
+
+            <dependencyManagement>
+                <dependencies>
+                    <dependency>
+                        <groupId>io.github.yanbrandao</groupId>
+                        <artifactId>tapajos-starter-web</artifactId>
+                        <version>0.0.1b</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>io.github.yanbrandao</groupId>
+                        <artifactId>tapajos-starter-swagger</artifactId>
+                        <version>0.0.1b</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>io.github.yanbrandao</groupId>
+                        <artifactId>tapajos-starter-commons</artifactId>
+                        <version>0.0.1b</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>io.github.yanbrandao</groupId>
+                        <artifactId>tapajos-starter-logging</artifactId>
+                        <version>0.0.1b</version>
+                    </dependency>
+                </dependencies>
+            </dependencyManagement>
+
+            <dependencies>
+                <dependency>
+                    <groupId>io.github.yanbrandao</groupId>
+                    <artifactId>tapajos-starter-logging</artifactId>
+                    <version>0.0.1b</version>
+                </dependency>
+            </dependencies>
+
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.jacoco</groupId>
+                            <artifactId>jacoco-maven-plugin</artifactId>
+                            <version>${jacoco-maven-plugin.version}</version>
+                            <executions>
+                                <execution>
+                                    <goals>
+                                        <goal>prepare-agent</goal>
+                                    </goals>
+                                </execution>
+                                <execution>
+                                    <id>report</id>
+                                    <phase>test</phase>
+                                    <goals>
+                                        <goal>report</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>-->
+    </project>

@@ -6,14 +6,32 @@
     <parent>
         <groupId>io.github.yanbrandao</groupId>
         <artifactId>tapajos-starter-parent</artifactId>
-        <version>${release.version}</version>
+        <version>0.0.1b</version>
     </parent>
     <artifactId>tapajos-starters</artifactId>
     <packaging>pom</packaging>
-    <name>Tapajós Starters</name>
-    <description>Módulo com todos os starters</description>
+    <name>tapajos-starters</name>
+    <description>Module with all starters</description>
 
     <properties>
         <main.basedir>${basedir}/..</main.basedir>
     </properties>
+
+    <modules>
+        <!-- <module>tapajos-starters-parent</module> -->
+        <module>tapajos-starter-web</module>
+        <module>tapajos-starter-commons</module>
+        <module>tapajos-starter-swagger</module>
+        <module>tapajos-starter-logging</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.github.yanbrandao</groupId>
+                <artifactId>tapajos-starter-commons</artifactId>
+                <version>0.0.1b</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
