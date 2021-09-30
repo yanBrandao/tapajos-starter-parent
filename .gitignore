@@ -14,3 +14,6 @@ buildNumber.properties
 .idea/
 
 .flattened-*
+
+*.iml
+stale_outputs_checked
