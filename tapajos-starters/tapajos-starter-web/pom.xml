@@ -36,7 +36,6 @@
         <dependency>
             <groupId>io.github.yanbrandao</groupId>
             <artifactId>tapajos-starter-swagger</artifactId>
-            <version>0.0.1a</version>
         </dependency>
     </dependencies>
 </project>

@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.3.RELEASE</version>
+        <version>4.0.5</version>
     </parent>
 
     <groupId>io.github.yanbrandao</groupId>
@@ -18,25 +18,23 @@
 
     <properties>
         <release.version>0.0.1b</release.version>
-        <java.version>11</java.version>
-        <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
-        <aws-java-jdk.version>1.11.848</aws-java-jdk.version>
+        <java.version>17</java.version>
+        <spring-cloud.version>2025.1.0</spring-cloud.version>
+        <aws-java-sdk.version>1.12.780</aws-java-sdk.version>
         <!-- Trace -->
-        <jaeger-client.version>1.3.2</jaeger-client.version>
+        <jaeger-client.version>1.8.1</jaeger-client.version>
         <!-- Documentation -->
-        <swagger.version>2.9.2</swagger.version>
-        <micrometer.version>1.5.4</micrometer.version>
+        <springdoc.version>3.0.2</springdoc.version>
         <!-- Logback -->
         <logback-jackson.version>0.1.5</logback-jackson.version>
         <logback-classic.version>0.1.5</logback-classic.version>
-        <logstash-logback-encoder.version>6.4</logstash-logback-encoder.version>
+        <logstash-logback-encoder.version>9.0</logstash-logback-encoder.version>
         <!-- Database -->
-        <postgres.version>42.2.16</postgres.version>
-        <liquibase.version>4.0.0</liquibase.version>
+        <liquibase.version>5.0.2</liquibase.version>
         <!-- Test -->
-        <jacoco-plugin.version>0.8.5</jacoco-plugin.version>
-        <mockito-kotlin.version>1.6.0</mockito-kotlin.version>
-        <kotlin.version>1.4.10</kotlin.version>
+        <jacoco-plugin.version>0.8.12</jacoco-plugin.version>
+        <mockito-kotlin.version>6.3.0</mockito-kotlin.version>
+        <kotlin.version>2.2.0</kotlin.version>
     </properties>
 
     <modules>
@@ -80,11 +78,6 @@
 
             <!-- Database -->
             <dependency>
-                <groupId>org.postgresql</groupId>
-                <artifactId>postgresql</artifactId>
-                <version>${postgres.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-core</artifactId>
                 <version>${liquibase.version}</version>
@@ -105,18 +98,6 @@
                 <groupId>net.logstash.logback</groupId>
                 <artifactId>logstash-logback-encoder</artifactId>
                 <version>${logstash-logback-encoder.version}</version>
-            </dependency>
-
-            <!-- metrics -->
-            <dependency>
-                <groupId>io.micrometer</groupId>
-                <artifactId>micrometer-core</artifactId>
-                <version>${micrometer.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.micrometer</groupId>
-                <artifactId>micrometer-registry-prometheus</artifactId>
-                <version>${micrometer.version}</version>
             </dependency>
 
             <!-- aws-java-sdk -->
@@ -148,7 +129,7 @@
 
             <!-- Tests -->
             <dependency>
-                <groupId>com.nhaarman.mockitokotlin2</groupId>
+                <groupId>org.mockito.kotlin</groupId>
                 <artifactId>mockito-kotlin</artifactId>
                 <version>${mockito-kotlin.version}</version>
                 <scope>test</scope>

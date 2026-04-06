@@ -29,12 +29,22 @@
             <dependency>
                 <groupId>io.github.yanbrandao</groupId>
                 <artifactId>tapajos-starter-commons</artifactId>
-                <version>0.0.1a</version>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.yanbrandao</groupId>
+                <artifactId>tapajos-starter-swagger</artifactId>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.github.yanbrandao</groupId>
                 <artifactId>tapajos-starter-web</artifactId>
-                <version>0.0.1a</version>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.yanbrandao</groupId>
+                <artifactId>tapajos-starter-logging</artifactId>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
